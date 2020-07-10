@@ -1,9 +1,9 @@
 ﻿namespace c_sharp_linq
 {
-    public class Employee
+    public class Product
     {
         public string Name { get; set; }
 
-        public string Role { get; set; }
+        public string ProductType { get; set; }
     }
 }

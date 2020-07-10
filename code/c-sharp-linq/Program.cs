@@ -17,18 +17,18 @@ namespace c_sharp_linq
 
         static void ShowInnerJoin()
         {
-            var roles = DataStore.GetRoles();
-            var employees = DataStore.GetEmployees();
+            var productTypes = ProductStore.GetProductTypes();
+            var products = ProductStore.GetProducts();
 
             // unlike = sign linq has 'equals' 
-            // creates anonymous objects with --> select new { e.Name, e.Role };
-            var result = from r in roles
-                         join e in employees on r equals e.Role
-                         select new { e.Name, e.Role };
-            
-            foreach(var emp in result)
+            // creates anonymous objects with -->  select new { e.Name, Category = e.ProductType };
+            var result = from r in productTypes
+                         join e in products on r equals e.ProductType
+                         select new { e.Name, Category = e.ProductType };
+
+            foreach(var item in result)
             {
-                Console.WriteLine($"{emp.Name} --> {emp.Role}");
+                Console.WriteLine($"{item.Name} --> {item.Category}");
             }
         }
     }
