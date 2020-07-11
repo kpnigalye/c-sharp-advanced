@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace c_sharp_linq
 {
@@ -40,9 +37,28 @@ namespace c_sharp_linq
                 new Product { Name = "Fragrances", ProductType = "Beuty Products" },
                 new Product { Name = "Bath and Shower", ProductType = "Beuty Products" },
                 new Product { Name = "Gaming Console", ProductType = "Software" },
-                new Product { Name = "antivirus", ProductType = "Software" },
+                new Product { Name = "Antivirus", ProductType = "Software" },
                 new Product { Name = "Video Games", ProductType = "Software" },
             };
+        }
+
+        /// <summary>
+        /// Generic Method to display data
+        /// </summary>
+        /// <typeparam name="T">Generic paramter</typeparam>
+        /// <param name="data">List of items</param>
+        /// <param name="header">head to display</param>
+        public static void ShowDummyData<T>(IEnumerable<T> data, string header)
+        {
+            Console.WriteLine(header);
+            Console.WriteLine("-------------");
+            foreach (var item in data)
+            {
+                if (item is Product product)
+                    Console.WriteLine(product.Name);
+                else
+                    Console.WriteLine(item);
+            }
         }
     }
 }
