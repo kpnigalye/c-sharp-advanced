@@ -47,7 +47,8 @@
     <Compile Include="Classes\Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QueryManager.cs" />
+    <Compile Include="QueryManager\SimpleQueryManager.cs" />
+    <Compile Include="QueryManager\JoinQueryManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

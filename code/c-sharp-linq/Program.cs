@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace c_sharp_linq
 {
@@ -12,6 +13,18 @@ namespace c_sharp_linq
             #region Display Data
             //ProductStore.ShowDummyData<string>(productTypes, "Product Types");
             //ProductStore.ShowDummyData<Product>(products, "\nProducts");
+            #endregion
+
+            #region Simple Queries
+            
+            //DisplayResult("Simple Queries", QueryManager.ExecuteOrderByClause(products));
+            
+            //DisplayResult("Simple Queries", QueryManager.ExecuteOrderByClause(products));
+
+            //DisplayResult("Simple Queries", QueryManager.ExecuteWhereAndOrderByClause(products));
+
+            DisplayResult("Simple Queries", QueryManager.ExecuteThenByClause(products));
+
             #endregion
 
             #region Inner Join
@@ -36,7 +49,7 @@ namespace c_sharp_linq
             */
             #endregion
             #region Left Outer Join
-            DisplayResult("Left Join", QueryManager.ExecuteLeftJoin(in productTypes, in products));
+            //DisplayResult("Left Join", QueryManager.ExecuteLeftJoin(in productTypes, in products));
             #endregion
             Console.ReadLine();
         }
@@ -55,6 +68,7 @@ namespace c_sharp_linq
             {
                 Console.WriteLine($"{item.Category} : {item.Name}");
             }
+            Console.WriteLine();
         }
     }
 }
