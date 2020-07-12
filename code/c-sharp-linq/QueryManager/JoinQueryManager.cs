@@ -34,6 +34,7 @@ namespace c_sharp_linq
         /// </summary>
         public static dynamic ExecuteGroupJoin(in IEnumerable<string> productTypes, in IEnumerable<Product> products)
         {
+            // Using Method Syntax
             //var result = productTypes.GroupJoin(// outer
             //    products   // inner
             //    , productType => productType        // outer key selector
@@ -43,6 +44,7 @@ namespace c_sharp_linq
             //        Products = matchedProducts,
             //        Category = productType
             //    });
+
             var result = from r in productTypes
                          join p in products 
                          on r equals p.ProductType 
@@ -59,30 +61,22 @@ namespace c_sharp_linq
         public static dynamic ExecuteLeftJoin(in IEnumerable<string> productTypes, in IEnumerable<Product> products)
         {
             var result = from r in productTypes
-                         join p in products on r equals p.ProductType into pd
+                         join p in products 
+                         on r equals p.ProductType 
+                         into pd
                          from p in pd.DefaultIfEmpty()
                          select new { Category = r, Name = p == null ? "No Product" : p.Name };
+
+            // Alternate way to write left join query
+            //var result = from r in productTypes
+            //             join p in products
+            //             on r equals p.ProductType
+            //             into pd
+            //             from p in pd.DefaultIfEmpty(new Product { Name = "No Product" })
+            //             select new { Category = r, p.Name };
+
             return result;
         }
 
-        /// <summary>
-        /// Right Join
-        /// Gives all records from right and matching records from left
-        /// </summary>
-        public static dynamic ExecuteRightJoin(in IEnumerable<string> productTypes, in IEnumerable<Product> products)
-        {
-            var result = from r in productTypes
-                         join p in products on r equals p.ProductType into pd
-                         from p in pd.DefaultIfEmpty(new Product { Name = "No Product" })
-                         select new { Category = r, p.Name };
-
-            /*
-            var result = from r in productTypes
-                         join p in products on r equals p.ProductType into pd
-                         from p in pd.DefaultIfEmpty()
-                         select new { Category = r, Name = p == null ? "No Product" : p.Name };
-            */
-            return result;
-        }
     }
 }
