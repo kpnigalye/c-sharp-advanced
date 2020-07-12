@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 
 namespace c_sharp_linq
 {
@@ -16,15 +15,18 @@ namespace c_sharp_linq
             #endregion
 
             #region Simple Queries
-            
+
             //DisplayResult("Simple Queries", QueryManager.ExecuteOrderByClause(products));
-            
+
             //DisplayResult("Simple Queries", QueryManager.ExecuteOrderByClause(products));
 
             //DisplayResult("Simple Queries", QueryManager.ExecuteWhereAndOrderByClause(products));
 
-            DisplayResult("Simple Queries", QueryManager.ExecuteThenByClause(products));
+            //DisplayResult("Simple Queries", QueryManager.ExecuteThenByClause(products));
 
+            //QueryManager.ExecuteGroupByClause();
+
+            //QueryManager.ExecuteToLookUp();
             #endregion
 
             #region Inner Join
@@ -48,6 +50,7 @@ namespace c_sharp_linq
             }
             */
             #endregion
+
             #region Left Outer Join
             //DisplayResult("Left Join", QueryManager.ExecuteLeftJoin(in productTypes, in products));
             #endregion
