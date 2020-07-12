@@ -33,27 +33,26 @@ namespace c_sharp_linq
             //DisplayResult("Inner Join", QueryManager.ExecuteInnerJoin(in productTypes, in products));
             #endregion
 
-            #region Group Join
-            /*
-            var result = QueryManager.ExecuteGroupJoin(in productTypes, in products);
+            #region Group Join            
+            //var result = QueryManager.ExecuteGroupJoin(in productTypes, in products);
 
-            Console.WriteLine("Group Join");
-            Console.WriteLine("-------------\n");
+            //Console.WriteLine("Group Join");
+            //Console.WriteLine("-------------\n");
 
-            foreach (var item in result)
-            {
-                Console.WriteLine($"{item.Category}");
-                foreach(var p in item.Products)
-                {
-                    Console.WriteLine($"\t{p.Name}");
-                }
-            }
-            */
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine($"{item.Category}");
+            //    foreach(var p in item.Products)
+            //    {
+            //        Console.WriteLine($"\t{p.Name}");
+            //    }
+            //}            
             #endregion
 
             #region Left Outer Join
             //DisplayResult("Left Join", QueryManager.ExecuteLeftJoin(in productTypes, in products));
             #endregion
+
             Console.ReadLine();
         }
 

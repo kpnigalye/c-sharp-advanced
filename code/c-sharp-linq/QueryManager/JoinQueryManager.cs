@@ -10,10 +10,20 @@ namespace c_sharp_linq
         /// </summary>
         public static dynamic ExecuteInnerJoin(in IEnumerable<string> productTypes, in IEnumerable<Product> products)
         {
-            // unlike = sign linq has 'equals' 
-            // creates anonymous objects with -->  select new { e.Name, Category = e.ProductType };
+            // Using Method Syntax
+            //var result = products.Join( // outer
+            //    productTypes    // inner
+            //    , product => product.ProductType    // inner key selector
+            //    , productType => productType        // outer key selector
+            //    , (product, productType) => new     // result formation
+            //    {
+            //        product.Name,
+            //        Category = product.ProductType
+            //    });
+
             var result = from r in productTypes
-                         join p in products on r equals p.ProductType
+                         join p in products 
+                         on r equals p.ProductType
                          select new { p.Name, Category = p.ProductType };
             return result;
         }
@@ -24,9 +34,21 @@ namespace c_sharp_linq
         /// </summary>
         public static dynamic ExecuteGroupJoin(in IEnumerable<string> productTypes, in IEnumerable<Product> products)
         {
+            //var result = productTypes.GroupJoin(// outer
+            //    products   // inner
+            //    , productType => productType        // outer key selector
+            //    , product => product.ProductType    // inner key selector
+            //    , (productType, matchedProducts) => new     // result formation
+            //    {
+            //        Products = matchedProducts,
+            //        Category = productType
+            //    });
             var result = from r in productTypes
-                         join p in products on r equals p.ProductType into pd
+                         join p in products 
+                         on r equals p.ProductType 
+                         into pd
                          select new { Category = r, Products = pd };
+
             return result;
         }
 
