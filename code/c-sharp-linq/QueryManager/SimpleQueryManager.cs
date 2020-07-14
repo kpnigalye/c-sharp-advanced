@@ -69,7 +69,7 @@ namespace c_sharp_linq
         /// </summary>
         public static void ExecuteGroupByClause()
         {
-            IList<Student> studentList = GetStudentData();
+            IList<Student> studentList = StudentData.GetStudentData();
 
             // Using Method Syntax
             //var groupedResult = studentList.GroupBy(a => a.Age);
@@ -83,7 +83,7 @@ namespace c_sharp_linq
                 Console.WriteLine("\nAge Group: {0}", ageGroup.Key); //Each group has a key 
                 Console.WriteLine("-----------------");
                 foreach (Student s in ageGroup) // Each group has inner collection
-                    Console.WriteLine("Student Name: {0}", s.StudentName);
+                    Console.WriteLine("Student Name: {0}", s.Name);
             }
         }
 
@@ -92,7 +92,7 @@ namespace c_sharp_linq
         /// </summary>
         public static void ExecuteToLookUp()
         {
-            IList<Student> studentList = GetStudentData();
+            IList<Student> studentList = StudentData.GetStudentData();
 
             // Using Method Syntax
             var groupedResult = studentList.ToLookup(a => a.Age);
@@ -103,21 +103,8 @@ namespace c_sharp_linq
                 Console.WriteLine("\nAge Group: {0}", ageGroup.Key); //Each group has a key 
                 Console.WriteLine("-----------------");
                 foreach (Student s in ageGroup) // Each group has inner collection
-                    Console.WriteLine("Student Name: {0}", s.StudentName);
+                    Console.WriteLine("Student Name: {0}", s.Name);
             }
-        }
-
-
-        // Populate Student data
-        private static IList<Student> GetStudentData()
-        {
-            return new List<Student>() {
-                new Student() { StudentID = 1, StudentName = "John", Age = 18 } ,
-                new Student() { StudentID = 2, StudentName = "Steve",  Age = 21 } ,
-                new Student() { StudentID = 3, StudentName = "Bill",  Age = 18 } ,
-                new Student() { StudentID = 4, StudentName = "Ram" , Age = 20 } ,
-                new Student() { StudentID = 5, StudentName = "Abram" , Age = 21 }
-            };
         }
     }
 }

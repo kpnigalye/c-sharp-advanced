@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace c_sharp_linq
 {
@@ -27,6 +28,40 @@ namespace c_sharp_linq
             //QueryManager.ExecuteGroupByClause();
 
             //QueryManager.ExecuteToLookUp();
+
+            #endregion
+
+            #region Select & SelectMany Clauses
+            /*
+            IList<Student> studentList = StudentData.GetStudentData();
+            
+            Console.WriteLine("List of Students");
+            Console.WriteLine("-------------------\n");
+
+            foreach (Student student in studentList)
+            {
+                Console.WriteLine($"{student.Id}: {student.Name}");
+                Console.WriteLine("Skills:");
+                foreach (var item in student.Skills)
+                {
+                    Console.WriteLine($"\t{item}");
+                }
+                Console.WriteLine();
+            }
+            */
+
+            //QueryManager.ExecuteSelectClause();
+            //QueryManager.ExecuteSelectManyClause();
+
+            #endregion
+
+            #region Quantifier Operators
+            //QueryManager.ExecuteOperator_All();
+            //QueryManager.ExecuteOperator_Any();
+
+            //QueryManager.ExecuteOperator_ContainsUsingCollections();
+            QueryManager.ExecuteOperator_Contains(products);
+
             #endregion
 
             #region Inner Join
