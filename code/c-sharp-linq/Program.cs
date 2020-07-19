@@ -101,7 +101,18 @@ namespace c_sharp_linq
             //QueryManager.ExecuteCountMethodWithCondition();
 
             //QueryManager.ExecuteMinMaxMethod();
-            QueryManager.ExecuteSumMethod();
+            //QueryManager.ExecuteSumMethod();
+
+            #endregion
+
+            #region Element Operators
+            //QueryManager.ExecuteElementAt(5);
+            //QueryManager.ExecuteElementAt(10);      // index out of range
+
+            //QueryManager.ExecuteFirstOp();
+            //QueryManager.ExecuteLastOp();
+            //QueryManager.ExecuteSingleOp();
+            QueryManager.ExecuteSingleOrDefaultOp();
 
             #endregion
 

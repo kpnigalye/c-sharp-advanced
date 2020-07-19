@@ -48,6 +48,7 @@
     <Compile Include="Classes\Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryManager\ElementOpQueryManager.cs" />
     <Compile Include="QueryManager\AggregateMethod.cs" />
     <Compile Include="QueryManager\QuantifierOpQueryManager.cs" />
     <Compile Include="QueryManager\SimpleQueryManager.cs" />
