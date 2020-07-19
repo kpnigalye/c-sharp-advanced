@@ -31,6 +31,30 @@ namespace c_sharp_linq
 
             #endregion
 
+            #region Inner Join
+            //DisplayResult("Inner Join", QueryManager.ExecuteInnerJoin(in productTypes, in products));
+            #endregion
+
+            #region Group Join            
+            //var result = QueryManager.ExecuteGroupJoin(in productTypes, in products);
+
+            //Console.WriteLine("Group Join");
+            //Console.WriteLine("-------------\n");
+
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine($"{item.Category}");
+            //    foreach(var p in item.Products)
+            //    {
+            //        Console.WriteLine($"\t{p.Name}");
+            //    }
+            //}            
+            #endregion
+
+            #region Left Outer Join
+            //DisplayResult("Left Join", QueryManager.ExecuteLeftJoin(in productTypes, in products));
+            #endregion
+
             #region Select & SelectMany Clauses
             /*
             IList<Student> studentList = StudentData.GetStudentData();
@@ -60,32 +84,25 @@ namespace c_sharp_linq
             //QueryManager.ExecuteOperator_Any();
 
             //QueryManager.ExecuteOperator_ContainsUsingCollections();
-            QueryManager.ExecuteOperator_Contains(products);
+            //QueryManager.ExecuteOperator_Contains(products);
 
             #endregion
 
-            #region Inner Join
-            //DisplayResult("Inner Join", QueryManager.ExecuteInnerJoin(in productTypes, in products));
-            #endregion
+            #region Aggregation Functions
 
-            #region Group Join            
-            //var result = QueryManager.ExecuteGroupJoin(in productTypes, in products);
+            //QueryManager.ExecuteAggregateMethod();
+            //QueryManager.ExecuteAggregateMethodWithSeed();
+            //QueryManager.ExecuteAggregateMethodForAddition();
+            //QueryManager.ExecuteAggregateMethodWithResult();
 
-            //Console.WriteLine("Group Join");
-            //Console.WriteLine("-------------\n");
+            //QueryManager.ExecuteAverageMethod();
 
-            //foreach (var item in result)
-            //{
-            //    Console.WriteLine($"{item.Category}");
-            //    foreach(var p in item.Products)
-            //    {
-            //        Console.WriteLine($"\t{p.Name}");
-            //    }
-            //}            
-            #endregion
+            //QueryManager.ExecuteCountMethod();
+            //QueryManager.ExecuteCountMethodWithCondition();
 
-            #region Left Outer Join
-            //DisplayResult("Left Join", QueryManager.ExecuteLeftJoin(in productTypes, in products));
+            //QueryManager.ExecuteMinMaxMethod();
+            QueryManager.ExecuteSumMethod();
+
             #endregion
 
             Console.ReadLine();
