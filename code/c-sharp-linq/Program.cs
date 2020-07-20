@@ -38,7 +38,7 @@ namespace c_sharp_linq
             #region Group Join            
             //var result = QueryManager.ExecuteGroupJoin(in productTypes, in products);
 
-            //Console.WriteLine("Group Join");
+            //"Group Join.PrintHeader();
             //Console.WriteLine("-------------\n");
 
             //foreach (var item in result)
@@ -59,8 +59,7 @@ namespace c_sharp_linq
             /*
             IList<Student> studentList = StudentData.GetStudentData();
             
-            Console.WriteLine("List of Students");
-            Console.WriteLine("-------------------\n");
+            "List of Students".PrintHeader();
 
             foreach (Student student in studentList)
             {
@@ -126,8 +125,7 @@ namespace c_sharp_linq
         /// <param name="result">Result of the LINQ</param>
         private static void DisplayResult(string header, dynamic result)
         {
-            Console.WriteLine(header);
-            Console.WriteLine("-------------\n");
+            header.PrintHeader();
 
             foreach (var item in result)
             {

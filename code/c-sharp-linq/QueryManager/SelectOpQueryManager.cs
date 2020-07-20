@@ -18,8 +18,7 @@ namespace c_sharp_linq
             var result = from s in studentList
                          select new { s.Name, s.Skills };
 
-            Console.WriteLine("Select Clause");
-            Console.WriteLine("----------------");
+            "Select Clause".PrintHeader();
 
             foreach (var student in result)
             {
@@ -41,8 +40,7 @@ namespace c_sharp_linq
 
             var skills = studentList.SelectMany(a => a.Skills);
 
-            Console.WriteLine("SelectMany Clause");
-            Console.WriteLine("----------------");
+            "SelectMany Clause".PrintHeader();
 
             foreach (var item in skills)
             {

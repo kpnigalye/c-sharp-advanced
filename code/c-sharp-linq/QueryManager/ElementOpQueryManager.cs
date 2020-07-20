@@ -13,8 +13,7 @@ namespace c_sharp_linq
         {
             IList<string> electronics = new List<string> { "Phone", "Computer", "Laptop", "Kindle", "Smart TVs", "LED TVs" };
 
-            Console.WriteLine("Element Operators");
-            Console.WriteLine("------------------");
+            "Element Operators".PrintHeader();
 
             // electronics.ElementAt(index) will throw an error if index is out of the range of collection
             /* electronics.ElementAtOrDefault(index) will return the default value of the type 
@@ -27,8 +26,7 @@ namespace c_sharp_linq
             IList<int> numbers = new List<int> { 2, 4, 6, 8, 9, 3 };
             IList<int> emptyList = new List<int>();
 
-            Console.WriteLine("Element Operators");
-            Console.WriteLine("------------------");
+            "Element Operators".PrintHeader();
 
             try
             {
@@ -50,8 +48,7 @@ namespace c_sharp_linq
             IList<int> numbers = new List<int> { 2, 4, 6, 8, 9, 3 };
             IList<int> emptyList = new List<int>();
 
-            Console.WriteLine("Element Operators");
-            Console.WriteLine("------------------");
+            "Element Operators".PrintHeader();
 
             try
             {
@@ -73,8 +70,7 @@ namespace c_sharp_linq
             IList<int> numbers = new List<int> { 2, 4, 6, 8, 9, 3 };
             IList<int> emptyList = new List<int>();
 
-            Console.WriteLine("Element Operators");
-            Console.WriteLine("------------------");
+            "Element Operators".PrintHeader();
 
             try
             {
@@ -94,9 +90,7 @@ namespace c_sharp_linq
         {
             IList<int> numbers = new List<int> { 2, 4, 6, 8, 9, 3 };
             IList<int> emptyList = new List<int>();
-
-            Console.WriteLine("Element Operators");
-            Console.WriteLine("------------------");
+            "Element Operators".PrintHeader();
 
             try
             {

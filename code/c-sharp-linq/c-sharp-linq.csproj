@@ -46,6 +46,7 @@
     <Compile Include="Classes\StudentData.cs" />
     <Compile Include="Classes\ProductStore.cs" />
     <Compile Include="Classes\Product.cs" />
+    <Compile Include="ConsoleHeaderWriter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryManager\ElementOpQueryManager.cs" />

@@ -13,9 +13,7 @@ namespace c_sharp_linq
         {
             IList<string> electronics = new List<string> { "Phone", "Computer", "Laptop", "Kindle", "Smart TVs", "LED TVs" };
 
-            Console.WriteLine("Aggregate Method");
-            Console.WriteLine("------------------");
-
+            "Aggregate Method".PrintHeader();
             Console.WriteLine(electronics.Aggregate((item1, item2) => item1 + ", " + item2));
         }
                 
@@ -23,9 +21,7 @@ namespace c_sharp_linq
         {
             IList<string> electronics = new List<string> { "Phone", "Computer", "Laptop", "Kindle", "Smart TVs", "LED TVs" };
 
-            Console.WriteLine("Aggregate Method");
-            Console.WriteLine("------------------");
-
+            "Aggregate Method".PrintHeader();
             Console.WriteLine(electronics.Aggregate("Available Electronics: ", (str, item2) => str += item2 + ", "));
         }
         
@@ -33,9 +29,7 @@ namespace c_sharp_linq
         {
             IList<Student> students = StudentData.GetStudentData();
 
-            Console.WriteLine("Aggregate Method");
-            Console.WriteLine("------------------");
-
+            "Aggregate Method".PrintHeader();
             Console.WriteLine("Total Age: {0}", students.Aggregate(0, (totalAge, student) => totalAge += student.Age));
         }
 
@@ -47,9 +41,7 @@ namespace c_sharp_linq
                 (str, s) => str += s.Name + ",",
                 str => str.Substring(0, str.Length - 1));
 
-            Console.WriteLine("Aggregate Method");
-            Console.WriteLine("------------------");
-
+            "Aggregate Method".PrintHeader();
             Console.WriteLine(names);
         }
         #endregion
@@ -59,8 +51,7 @@ namespace c_sharp_linq
         {
             IList<int> allAges = StudentData.GetStudentData().Select(a => a.Age).ToList();
 
-            Console.WriteLine("Average Method");
-            Console.WriteLine("------------------");
+            "Average Method".PrintHeader();
             Console.WriteLine("Average Age: {0}", allAges.Average());
         }
         #endregion
@@ -68,10 +59,9 @@ namespace c_sharp_linq
         #region Count Method
         public static void ExecuteCountMethod()
         {
+
             int count = StudentData.GetStudentData().Count();
 
-            Console.WriteLine("Count Method");
-            Console.WriteLine("------------------");
             Console.WriteLine("Number of Students: {0}", count);
         }
 
@@ -79,6 +69,7 @@ namespace c_sharp_linq
         {
             int count = StudentData.GetStudentData().Count(a => a.Age > 20);
 
+            "Count Method".PrintHeader();
             Console.WriteLine("Number of Students whose age is above 20: {0}", count);
         }
         #endregion
@@ -89,8 +80,7 @@ namespace c_sharp_linq
             int maxAge = StudentData.GetStudentData().Max(a=>a.Age);
             int minAge = StudentData.GetStudentData().Min(a=>a.Age);
 
-            Console.WriteLine("Use of Min-Max Methods");
-            Console.WriteLine("------------------");
+            "Use of Min-Max Methods".PrintHeader();
             Console.WriteLine("Min Age: {0}", minAge);
             Console.WriteLine("Max Age: {0}", maxAge);
         }
@@ -108,8 +98,7 @@ namespace c_sharp_linq
                     return 0;
             });
 
-            Console.WriteLine("Use of Sum Method with a condition");
-            Console.WriteLine("-------------------------------------");
+            "Use of Sum Method with a condition".PrintHeader();
             Console.WriteLine("Sum of Even Ages: {0}", sum);
         }
         #endregion
