@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace c_sharp_delegates
 {
@@ -18,7 +17,7 @@ namespace c_sharp_delegates
             SelectedProducts.Add(product);
 
             cartAlert($"\n{product.Name} is Added to cart. ");
-            
+
             return product.Price;
         }
 
@@ -34,9 +33,10 @@ namespace c_sharp_delegates
             UpdateTotalAmount(price, cartAlert);
         }
 
-        public void Checkout(ShoppingCartAlert cartAlert)
+        public void Checkout(ShoppingCartAlert cartAlert,
+            Func<int, int> discountedPrice)
         {
-            cartAlert($"You paid {Total} using online payment system.");
+            cartAlert($"You paid { discountedPrice(Total)} using online payment system.");
         }
 
         public void EmptyCart(ShoppingCartAlert cartAlert)

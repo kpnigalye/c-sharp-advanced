@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace c_sharp_delegates
 {
@@ -19,7 +15,7 @@ namespace c_sharp_delegates
             "Products Listing".PrintHeader();
 
             Console.WriteLine("=> Enter 0 to Exit\n");
-            
+
             ProductListing.GetProducts();
             int userChoice = -1;
             ShoppingCart cart = new ShoppingCart();
@@ -59,7 +55,13 @@ namespace c_sharp_delegates
 
             if (readyToCheckout.ToUpper() == "Y")
             {
-                cart.Checkout(NotifyUser);
+                Console.Write("\nAre you a student? (Y/N) ");
+                string areYouStudent = Console.ReadLine();
+                if (areYouStudent.ToUpper() == "Y")
+                    cart.Checkout(NotifyUser, ApplyStudentDiscount);
+                else
+                    cart.Checkout(NotifyUser, ApplyOtherDiscount);
+
                 cart.DispatchProducts(NotifyUser);
             }
             else
@@ -67,5 +69,13 @@ namespace c_sharp_delegates
 
             Console.ReadLine();
         }
+
+
+        // Apply student discount
+        public static int ApplyStudentDiscount(int total) => total - 2000;
+
+        // Apply student discount
+        public static int ApplyOtherDiscount(int total) => total - 500;
+
     }
 }
