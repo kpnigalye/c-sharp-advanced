@@ -43,10 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BasicExample\Car.cs" />
-    <Compile Include="BasicExample\CarHelper.cs" />
+    <Compile Include="Car\Car.cs" />
+    <Compile Include="Car\CarHelper.cs" />
+    <Compile Include="ShoppingCart\CartHelper.cs" />
+    <Compile Include="ShoppingCart\Product.cs" />
+    <Compile Include="ShoppingCart\ProductListing.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShoppingCart\ShoppingCart.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
