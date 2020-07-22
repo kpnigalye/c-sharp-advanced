@@ -9,7 +9,7 @@ namespace c_sharp_delegates
         public List<Product> SelectedProducts { get; set; } = new List<Product>();
         private int Total { get; set; } = 0;
 
-        //public delegate void Action<string>(string message);
+        //public delegate void ShoppingCartAlert(string message);
 
         //private int MoveItemToShoppingCart(int code, ShoppingCartAlert cartAlert)
         private int MoveItemToShoppingCart(int code, Action<string> cartAlert)

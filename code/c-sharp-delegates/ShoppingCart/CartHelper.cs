@@ -58,9 +58,9 @@ namespace c_sharp_delegates
                 Console.Write("\nAre you a student? (Y/N) ");
                 string areYouStudent = Console.ReadLine();
                 if (areYouStudent.ToUpper() == "Y")
-                    cart.Checkout(NotifyUser, ApplyStudentDiscount);
+                    cart.Checkout(NotifyUser, (total) => total - 2000);
                 else
-                    cart.Checkout(NotifyUser, ApplyOtherDiscount);
+                    cart.Checkout(NotifyUser, (total) => total - 1000);     // passing Anonymous method as an argument
 
                 cart.DispatchProducts(NotifyUser);
             }
@@ -69,13 +69,5 @@ namespace c_sharp_delegates
 
             Console.ReadLine();
         }
-
-
-        // Apply student discount
-        public static int ApplyStudentDiscount(int total) => total - 2000;
-
-        // Apply student discount
-        public static int ApplyOtherDiscount(int total) => total - 500;
-
     }
 }

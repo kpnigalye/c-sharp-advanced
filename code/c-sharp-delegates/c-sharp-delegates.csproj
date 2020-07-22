@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Car\Car.cs" />
     <Compile Include="Car\CarHelper.cs" />
+    <Compile Include="ShoppingCart\ConsoleHeaderWriter.cs" />
     <Compile Include="ShoppingCart\CartHelper.cs" />
     <Compile Include="ShoppingCart\Product.cs" />
     <Compile Include="ShoppingCart\ProductListing.cs" />
