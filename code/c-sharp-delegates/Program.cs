@@ -138,6 +138,11 @@ namespace c_sharp_delegates
             //Console.WriteLine($"Is given string in capital letters? {predicate("Hello World")}");
             #endregion
 
+            #region Code Samples
+            //CarHelper.ExecuteCarCommands();
+            CartHelper.ExecuteCarCommands();
+            #endregion
+
             Console.ReadLine();
         }
     }
@@ -148,5 +153,4 @@ namespace c_sharp_delegates
 
 
 
-//CarHelper.ExecuteCarCommands();
-//CartHelper.ExecuteCarCommands();
+
