@@ -31,6 +31,12 @@ namespace c_sharp_delegates
             int c = a - b;
             Console.WriteLine($"Subtract: {c}");
         }
+
+        public static bool CheckIfEven(int number)
+        {
+            return number % 2 == 0;
+        }
+
         #endregion
 
         static void Main(string[] args)
@@ -105,9 +111,35 @@ namespace c_sharp_delegates
             //operate(5);
             #endregion
 
+            #region Function Delegates
+            //int n = 5;
+            //Func<int, bool> func = CheckIfEven;
+
+            //Console.WriteLine($"Is {n} an even number? {func(n)}");
+
+            //func = (numb) => numb % 2 != 0;
+            //Console.WriteLine($"Is {n} an odd number? {func(n)}");
+            #endregion
+
+            #region Action Delegates
+            //Action<string> action = delegate (string message)
+            //{
+            //    Console.WriteLine(message);
+            //};
+
+            //action("Console Output");
+
+            //action = (msg) => Console.WriteLine(msg);
+            //action("Printer output");
+            #endregion
+
+            #region Predicate Delegates
+            //Predicate<string> predicate = (string str) => str.Equals(str.ToUpper());
+            //Console.WriteLine($"Is given string in capital letters? {predicate("Hello World")}");
+            #endregion
+
             Console.ReadLine();
         }
-
     }
 }
 
