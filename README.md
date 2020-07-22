@@ -3,11 +3,11 @@ My experiments with advanced topics of C#
 
 ## Topics Covered
 - LINQ
+- Delegates
 
 ## Topics Planning to cover
 - Reflection
 - Generics
-- Delegates
 - Lamda functions
 - Async/Await
 - Threading
