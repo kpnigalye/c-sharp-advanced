@@ -8,10 +8,16 @@ namespace c_sharp_delegates
 {
     class Program
     {
+        #region Delegates Signatures
+        // Used for show different ways of calling delegate
         public delegate void ArithmaticDelegate(int a, int b);
 
         // Generic Delegate
         public delegate T AddDel<T>(T a, T b);
+
+        // Used for Anonymous Methods
+        public delegate void OperateDel(int num);
+        #endregion
 
         #region Target Methods
         public static void Add(int a, int b)
@@ -77,6 +83,26 @@ namespace c_sharp_delegates
             //    return str1 + str2;
             //};
             //Console.WriteLine($"Result String: {concat("Hello ", "World")}");
+            #endregion
+
+            #region Anonymous Methods
+            //OperateDel operate = delegate (int a)
+            //{
+            //    Console.WriteLine($"Double of {a}: {a * 2}");
+            //};
+            //operate(5);
+
+            //int p = 3;
+            //OperateDel power = delegate (int a)
+            //{
+            //    Console.WriteLine($"Power {p} of {a}: {Math.Pow(a, p)}");
+            //};
+            //power(5);
+
+            //// Lambda Expression is an evolution of anonymous method
+            //// A shorter way to represnt an anonymous method
+            //OperateDel operate = a => Console.WriteLine($"Square of {a}: {a * a}");
+            //operate(5);
             #endregion
 
             Console.ReadLine();
